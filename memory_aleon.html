@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ca"> <!-- meta idioma -->
+
+<head>
+<meta charset="utf-8"><!--meta joc de caràcters -->
+<meta name="viewport" content="width=device-width, initial-scale=1"><!-- etiqueta per HTML responsive -->
+<meta name="description" content="">
+<meta name="author" content="Aleix Leon">
+
+<title>Projecte UF1 -El Memory</title><!-- títol de la web -->
+
+<!-- CSS interns --><style></style>
+<!-- estils aleon -->
+<link rel="stylesheet" type="text/css" href="css/aleon.css" >
+</head>
+<body>
+
+<!--
+Memory
+NORMES DEL JOC:
+. El joc té un tauler (pots fer una taula, o bé amb div) de 4 x 3
+. Hi ha 6 parelles d’imatges, colors, caràcters  iguals que es distribueixen per tot el tauler
+. Inicialment les imatges estaran totes tapades 
+. Un botó inici permetrà començar el joc (si es prem al mig d’una partida 
+demanarà si es vol tornar a iniciar el joc, sinó comença la partida)
+. Quan el jugador comenci el joc podrà destapar 2 caselles, 
+si els items coincideixen serà un match, i les caselles quedaran destapades, 
+si les caselles no coincideixen després de 1-2 segons es taparan.
+. El joc acaba quan s’hagin destapat totes les caselles 
+o bé si després d’1 minut el jugador no ha aconseguit destapar les caselles
+
+A tenir en compte:
+. Has de repartir els items aleatòriament en cada partida
+. Utilitza estats per cada casella (tapada, destapada)
+. Programa modularment
+. La presentació ha de ser correcta (no perdis el temps en el css)
+ -->
+
+<header>
+<h1 class = 'centrat'>El Memory</h1>
+</header>
+
+<section id = 'control'>
+    <button id ='buto' onclick= 'confirma()' >Juga !</button>
+    <h2 id ='missatge'></h2>
+    <div id ='timer'>
+        <div id= 'timer_joc' class = 'timers'>00:00</div>
+        <div id = 'timer_torn' class = 'timers'>00</div>
+    </div>
+</section>
+
+<section class ='tauler'>
+<table id ='taula'>
+<tr>
+    <td class ='ok'><div id = 'c00' class="destapada"></div></td>
+    <td class ='ok'><div id = 'c01' class="destapada"></div></td>
+    <td class ='ok'><div id = 'c02' class="destapada"></div></td>
+    <td class ='ok'><div id = 'c03' class="destapada"></div></td>
+</tr>
+<tr>
+    <td class ='ok'><div id = 'c10' class="destapada"></div></td>
+    <td class ='ok'><div id = 'c11' class="destapada"></div></td>
+    <td class ='ok'><div id = 'c12' class="destapada"></div></td>
+    <td class ='ok'><div id = 'c13' class="destapada"></div></td>
+</tr>
+<tr>
+    <td class ='ok'><div id = 'c20' class="destapada"></div></td>
+    <td class ='ok'><div id = 'c21' class="destapada"></div></td>
+    <td class ='ok'><div id = 'c22' class="destapada"></div></td>
+    <td class ='ok'><div id = 'c23' class="destapada"></div></td>
+</tr>
+<tr>
+    <td class ='ok'><div id = 'c30' class="destapada"></div></td>
+    <td class ='ok'><div id = 'c31' class="destapada"></div></td>
+    <td class ='ok'><div id = 'c32' class="destapada"></div></td>
+    <td class ='ok'><div id = 'c33' class="destapada"></div></td>
+</tr>
+
+</table>
+</section>
+
+<footer>
+<p>© Aleix Leon 2021-22</p>
+</footer>
+
+<script type="text/javascript" src="js/memory_aleon.js" charset="utf-8"></script>
+</body>
+</html>
