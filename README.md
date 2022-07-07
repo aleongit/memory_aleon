@@ -1,4 +1,4 @@
-#memory aleon
+# memory aleon
 
 A basic native javascript example to play the memory game.
 Use of arrays, dom and timings.
