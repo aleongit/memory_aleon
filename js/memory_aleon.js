@@ -32,7 +32,7 @@ const ids = ['c00','c01','c02','c03',
         ]*/
 
 const TEMPS_JOC = 60;
-const TEMPS_DES = 2;
+const TEMPS_DES = 1;
 
 let conta = 0;
 let timeout;
@@ -289,12 +289,16 @@ const juga_caselles = (casella) => {
             //marquem td com a 'ko'
             marcades.forEach( marcada => marcada.className = 'ko' );
             completada();
-            //torna deixar clicar taula
-            document.querySelector('#taula').className = '';
 
             //si últim match, partida completada i guanyada
             //console.log(completada());
-            if(completada()) {guanyada();}
+            if(completada()) {
+                setTimeout(function () { guanyada(); }, TEMPS_DES * 1000);
+            }
+            
+            //torna deixar clicar taula
+            document.querySelector('#taula').className = '';
+            console.log('Pots clicar!')
 
             }
         //si no iguals
