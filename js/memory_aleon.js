@@ -218,6 +218,25 @@ const tapa_casella = (marcades) => {
     document.querySelector('#timer_torn').innerHTML = "";
 }
 
+//ok casella
+const match_casella = (marcades) => {
+    //deixem com a destapades (div) *per visibility = visible
+    //marquem td com a 'ko'
+    marcades.forEach( marcada => marcada.className = 'ko' );
+    //si últim match, partida completada i guanyada
+    //console.log(completada());
+    //completada();
+    if(completada()) { 
+        guanyada(); 
+    }
+    //torna deixar clicar taula
+    else {
+        document.querySelector('#taula').className = '';
+        console.log('Pots clicar!');
+    }
+
+}
+
 //mira destapades ko
 const mira_destapades = () => document.querySelectorAll("#taula td[class*='ko']");
 
@@ -285,22 +304,8 @@ const juga_caselles = (casella) => {
 
         //si continguts iguals, match
         if (c1 == c2) {
-            //deixem com a destapades (div) *per visibility = visible
-            //marquem td com a 'ko'
-            marcades.forEach( marcada => marcada.className = 'ko' );
-            completada();
-
-            //si últim match, partida completada i guanyada
-            //console.log(completada());
-            if(completada()) {
-                setTimeout(function () { guanyada(); }, TEMPS_DES * 1000);
-            }
-            
-            //torna deixar clicar taula
-            document.querySelector('#taula').className = '';
-            console.log('Pots clicar!')
-
-            }
+            setTimeout(function () { match_casella(marcades); }, TEMPS_DES * 1000);
+        }
         //si no iguals
         else {
             //console.log('pause ?');
